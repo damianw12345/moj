@@ -19,7 +19,21 @@ return [
                     ],
                     'defaults' => [
                         'controller' => Controller\LoginController::class,
-                        'action'     => 'index',
+                        'action'     => 'login',
+                    ],
+                ],
+            ],
+            'register' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/login[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\LoginController::class,
+                        'action'     => 'login',
                     ],
                 ],
             ],
@@ -35,7 +49,7 @@ return [
             'layout/layout'           => __DIR__ . '/../view/login/login/index.phtml',
             'login/index/index' => __DIR__ . '/../view/login/login/index.phtml',
             'error/404'               => __DIR__ . '/../view/login/login/index.phtml',
-            'error'             => __DIR__ . '/../view/login/login/index.phtml',
+            'error'             => __DIR__ . '/../view/login/login/error.phtml',
         ],
         'template_path_stack' => [
             'login' => __DIR__ . '/../view',

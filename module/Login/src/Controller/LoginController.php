@@ -1,6 +1,8 @@
 <?php
 
 namespace Login\Controller;
+
+
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -15,7 +17,19 @@ class LoginController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel();
+
+//        $view = new ViewModel(array('form'=>$loginForm));
+        
+        return new ViewModel(array(
+            'dupa'=>'dupa wolowa i sowa'
+        ));
+    }
+
+    public function loginAction()
+    {
+        return new ViewModel(array(
+            'dupa'=>'dupa wolowa i sowa'
+        ));
     }
 
 }
